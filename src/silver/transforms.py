@@ -22,7 +22,7 @@ def split_valid_invalid(df: DataFrame):
     rule = F.coalesce(
         F.col("transaction_id").isNotNull()
         & F.col("amount").isNotNull()
-        & (F.col("amount") >= 0)
+        & (F.col("amount") > 0)
         & F.col("status").isin(VALID_STATUSES)
         & F.col("timestamp").isNotNull(),
         F.lit(False),
