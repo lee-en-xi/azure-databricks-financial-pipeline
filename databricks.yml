@@ -1,0 +1,18 @@
+bundle:
+  name: fin_pipeline
+
+include:
+  - bundle/*.yml
+
+variables:
+  catalog:
+    description: Unity Catalog catalog to use
+    default: workspace
+  schema:
+    description: Schema for this project
+    default: fin_pipeline
+
+targets:
+  dev:
+    mode: development
+    default: true
