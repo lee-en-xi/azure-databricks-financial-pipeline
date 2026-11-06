@@ -13,14 +13,14 @@ An enterprise-grade, end-to-end financial data pipeline built using **PySpark, D
 ---
 
 ## Project Structure
-
+```text
 ├── .github/workflows/      # CI/CD pipelines for automated testing and deployment
 ├── bundle/                 # Databricks job definitions (setup_job.yml, pipeline_job.yml)
 ├── src/                    # Core pipeline logic (Generator, Bronze, Silver, Gold layers)
 ├── unit_tests/             # Pytest suite with local Spark testing fixtures
 ├── databricks.yml          # Databricks Asset Bundle (DAB) root configuration
 ├── Dockerfile              # Container recipe for the local data generator
-└── requirements-dev.txt    # Development dependencies (PySpark, Pytest)
+└── requirements-dev.txt    # Development dependencies (PySpark, Pytest) ```text
 
 ## Quality Gate Exception Error
 <img width="3770" height="1945" alt="image" src="https://github.com/user-attachments/assets/185ce3d7-16ce-4511-aa2f-434e3d213271" />
