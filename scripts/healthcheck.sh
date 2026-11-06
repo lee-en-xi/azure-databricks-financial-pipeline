@@ -1,20 +1,16 @@
 #!/bin/bash
 set -euo pipefail
-FILE="app.log"
 
-if [ -f "$FILE" ]; then
-	echo "$FILE exists, line count: $(wc -l < "$FILE")"
-	
-	ERRORS=$(grep -c "ERROR" "$FILE" || true)
-	if [ "$ERRORS" -gt 2 ]; then
-	echo "Pipeline unhealthy"
+JOB_ID="${1:?Usage: healthcheck.sh <job_id>}"
 
-	else 
-	echo "Pipeline healthy"
-	fi
-else 
-	echo "ERROR: $FILE not found" >&2
-	exit 1
-fi
+RESULT=$(databricks jobs list-runs --job-id "$JOB_ID" --limit 1 --output json \
+  | jq -r '(.runs // .)[0].state.result_state // "UNKNOWN"')
 
-	
+echo "$(date '+%F %T') job=$JOB_ID latest_result=$RESULT"
+
+if [ "$RESULT" = "SUCCESS" ]; then
+    echo "Pipeline healthy"
+else
+    echo "Pipeline unhealthy" >&2
+    exit 1
+fi	
