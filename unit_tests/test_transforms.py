@@ -63,8 +63,4 @@ def test_zero_amount_is_invalid(spark):
     assert invalid.count() == 1
 
 
-def test_zero_amount_is_invalid(spark):
-    df = make_df(spark, [("t1", "0", "COMPLETED", "2026-01-01T10:00:00")])
-    valid, invalid = split_valid_invalid(df)
-    assert valid.count() == 0
-    assert invalid.count() == 1
+
