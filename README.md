@@ -24,8 +24,13 @@ An enterprise-grade, end-to-end financial data pipeline built using **PySpark, D
 ```text
 ├── .github/workflows/      # CI/CD pipelines for automated testing and deployment
 ├── bundle/                 # Databricks job definitions (setup_job.yml, pipeline_job.yml)
+├── scripts/                # Utility shell scripts (upload_landing.sh, healthcheck.sh)
 ├── src/                    # Core pipeline logic (Generator, Bronze, Silver, Gold layers)
 ├── unit_tests/             # Pytest suite with local Spark testing fixtures
-├── databricks.yml          # Databricks Asset Bundle (DAB) root configuration
+├── .dockerignore           # Specifies files ignored during Docker builds
+├── .gitignore              # Specifies files ignored by Git version control
 ├── Dockerfile              # Container recipe for the local data generator
-└── requirements-dev.txt    # Development dependencies (PySpark, Pytest) ```text
+├── databricks.yml          # Databricks Asset Bundle (DAB) root configuration
+├── pytest.ini              # Pytest configuration settings
+├── requirements-dev.txt    # Development and testing dependencies (PySpark, Pytest)
+└── requirements.txt        # Core application dependencies
