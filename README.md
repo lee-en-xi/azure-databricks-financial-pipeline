@@ -22,6 +22,8 @@ An enterprise-grade, end-to-end financial data pipeline built using **PySpark, D
 ├── Dockerfile              # Container recipe for the local data generator
 └── requirements-dev.txt    # Development dependencies (PySpark, Pytest) ```text
 
+---
+
 ## Quality Gate Exception Error
 <img width="3770" height="1945" alt="image" src="https://github.com/user-attachments/assets/185ce3d7-16ce-4511-aa2f-434e3d213271" />
 
