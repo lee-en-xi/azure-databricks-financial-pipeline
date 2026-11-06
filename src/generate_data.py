@@ -5,10 +5,11 @@ import uuid
 from datetime import datetime, timedelta
 
 ROWS = int(os.getenv("ROWS", "100"))
-OUTPUT_DIR = os.getenv("OUTPUT_DIR", "data/sample_landing")
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "data/sample_landing"
 
 MERCHANTS = ["Tesco", "Grab", "Shopee", "Petronas", "Starbucks", "Lazada"]
 STATUSES = ["COMPLETED", "PENDING", "FAILED"]
+payment_methods = ["Credit Card", "FPX", "E-Wallet"]
 FIELDS = ["transaction_id", "account_id", "merchant", "amount",
           "currency", "status", "timestamp"]
 
@@ -24,6 +25,7 @@ def make_row():
         "merchant": random.choice(MERCHANTS),
         "amount": amount,
         "currency": "MYR",
+	"payment_methods": random.choice(payment_methods),
         "status": random.choice(STATUSES),
         "timestamp": (datetime.now() - timedelta(minutes=random.randint(0, 10000))).isoformat(timespec="seconds"),
     }
