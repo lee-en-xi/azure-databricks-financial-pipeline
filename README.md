@@ -18,6 +18,9 @@ An enterprise-grade, end-to-end financial data pipeline built using **PySpark, D
 ## Unit Testing Failed Error
 <img width="3807" height="1867" alt="Screenshot 2026-11-05 141033" src="https://github.com/user-attachments/assets/9a4f0751-bc91-4b28-9e1a-77f089504c03" />
 
+## Medallion Architecture
+<img width="2335" height="1205" alt="Screenshot 2026-11-07 162341" src="https://github.com/user-attachments/assets/d4c4cfa8-5c1f-4ff9-9c46-c9d533608179" />
+
 ---
 
 ## Project Structure
